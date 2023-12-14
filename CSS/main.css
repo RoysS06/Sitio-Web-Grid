@@ -77,7 +77,7 @@ section{
 /* AGRAGANDO IMAGENES */
 
 .menu .about-tile .front{
-    background-image: url("../Assets/img/profile.png");
+    background-image: url("../Assets/img/Profile.png");
     background-size: cover;
     background-position: center;
 }
