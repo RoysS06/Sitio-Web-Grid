@@ -1,0 +1,559 @@
+body{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+section{
+    min-height: 100vh;
+}
+
+
+/* PRIMERA SECCIÓN */
+
+.menu{
+    background-color: #457373;
+    display: grid;
+    grid-template-columns: repeat(4, 200px);
+    grid-template-rows: repeat(2, 200px);
+    justify-content: center;
+    align-content: center;
+    grid-template-areas: 
+    "about about projects projects"
+    "about about posts contact";
+}
+
+.menu .about-tile{
+    grid-area: about;
+}
+
+.menu .projects-tile{
+    grid-area: projects;
+}
+
+.menu .tile{
+    height: 100%;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.menu .tile a{
+    text-decoration: none;
+}
+
+.menu .tile .front{
+    /* background-color: black; */
+    height: 100%;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+.menu .tile .back{
+    background-color: #222;
+    color: white;
+    height:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.menu .tile:hover .front{
+    margin-top: -100%;
+}
+
+.menu .projects-tile:hover .front{
+    margin-top: -50%;
+}
+
+
+/* AGRAGANDO IMAGENES */
+
+.menu .about-tile .front{
+    background-image: url("../Assets/img/profile.png");
+    background-size: cover;
+    background-position: center;
+}
+
+.menu .projects-tile .front{
+    background-image: url("../Assets/img/work-01.png");
+    background-size: cover;
+    background-position: center;
+}
+
+.menu .posts-tile .front{
+    background-image: url("../Assets/img/work-02.png");
+    background-size: cover;
+    background-position: center;
+}
+
+.menu .contact-tile .front{
+    background-image: url("../Assets/img/work-03.png");
+    background-size: cover;
+    background-position: center;
+}
+
+
+/* SEGUNDA SECCIÓN */
+
+.about{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 20px;
+    padding: 20px;
+    
+    grid-template-areas: 
+    "stack stack stack"
+    "services references awards";
+}
+
+.about .tile-1{
+    grid-area: stack;
+}
+
+
+.about .tile{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+
+    background-color: #eee;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+}
+
+
+.about .tile img{
+    width: 120px;
+}
+
+.about .tile h2{
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 2.4rem;
+}
+
+.about .tile p{
+    font-size: 1.6rem;
+}
+
+
+
+/* TERCERA SECCIÓN */
+
+.projects {
+    background-color: #457373;
+    display: grid; 
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(10, 1fr); 
+    gap: 10px;
+    padding: 10px;
+    grid-template-areas: 
+      "information information information photo-1 photo-1 photo-1 photo-3 photo-3 photo-4 photo-4"
+      "information information information photo-1 photo-1 photo-1 photo-3 photo-3 photo-4 photo-4"
+      "information information information photo-1 photo-1 photo-1 photo-5 photo-02 photo-4 photo-4"
+      "information information information photo-7 photo-7 photo-6 photo-6 photo-6 photo-9 photo-9"
+      "information information information photo-7 photo-7 photo-6 photo-6 photo-6 photo-9 photo-9"
+      "information information information photo-7 photo-7 photo-8 photo-8 photo-8 photo-8 photo-8"
+      "information information information photo-10 photo-10 photo-8 photo-8 photo-8 photo-8 photo-8"
+      "information information information photo-10 photo-10 photo-11 photo-11 photo-11 photo-12 photo-12"
+      "information information information photo-13 photo-14 photo-11 photo-11 photo-11 photo-12 photo-12"
+      "information information information photo-15 photo-16 photo-11 photo-11 photo-11 photo-12 photo-12"; 
+}
+
+.projects .tile{
+    background-color: #ccc;
+    border-radius: 5px;
+}
+
+.projects .tile a{
+    display: grid;
+    height: 100%;
+}
+
+
+.projects .tile:hover:not(.information){
+    transform: scale(0.99);
+    opacity: 1;
+}
+
+.projects .tile:not(.information){
+    transition: all 0.1s ease-in;
+    opacity: 0.5;
+}
+
+
+.information { 
+    grid-area: information;
+    color: white;
+    font-size: 15px;
+    background-image: url("../Assets/img/work-17.png");
+    background-size: cover;
+    background-position: center;
+}
+
+.projects .information{
+    height: 100%;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+
+.projects .information .front{
+    height: 100%;
+    transition: all 0.3s ease;
+
+}
+
+.projects .information .back{
+    background-color: #457373;
+    color: white;
+    height: 100%;
+    padding: 20px;
+}
+
+.projects .information:hover .front{
+    margin-top: -50%;
+}
+
+
+.photo-1 {
+    grid-area: photo-1;
+    background-image: url("../Assets/img/work-01.png");
+    background-size: cover;
+    background-position: center;
+}
+
+.photo-3 {
+    grid-area: photo-3;
+    background-image: url("../Assets/img/work-03.png");
+    background-size: cover;
+    background-position: center;
+}
+
+.photo-4 {
+    grid-area: photo-4;
+    background-image: url("../Assets/img/work-04.png");
+    background-size: cover;
+    background-position: center;
+}
+
+.photo-5 {
+    grid-area: photo-5;
+    background-image: url("../Assets/img/work-05.png");
+    background-size: cover;
+    background-position: center;
+}
+
+.photo-2 {
+    grid-area: photo-02;
+    background-image: url("../Assets/img/work-02.png");
+    background-size: cover;
+    background-position: center;
+}
+
+.photo-7 {
+    grid-area: photo-7;
+    background-image: url("../Assets/img/work-06.png");
+    background-size: cover;
+    background-position: center;
+}
+
+.photo-6 {
+    grid-area: photo-6;
+    background-image: url("../Assets/img/work-07.png");
+    background-size: cover;
+    background-position: center;
+}
+
+.photo-9 {
+    grid-area: photo-9;
+    background-image: url("../Assets/img/work-08.png");
+    background-size: cover;
+    background-position: center;
+}
+.photo-8 {
+    grid-area: photo-8;
+    background-image: url("../Assets/img/work-10.png");
+    background-size: cover;
+    background-position: center;
+}
+
+.photo-10 {
+    grid-area: photo-10;
+    background-image: url("../Assets/img/work-09.png");
+    background-size: cover;
+    background-position: center;
+}
+
+.photo-11 { 
+    grid-area: photo-11;
+    background-image: url("../Assets/img/work-11.png");
+    background-size: cover;
+    background-position: center;
+}
+
+.photo-12 { 
+    grid-area: photo-12;
+    background-image: url("../Assets/img/work-12.png");
+    background-size: cover;
+    background-position: center;
+}
+
+.photo-13 { 
+    grid-area: photo-13;
+    background-image: url("../Assets/img/work-13.png");
+    background-size: cover;
+    background-position: center;
+}
+
+.photo-14 {
+    grid-area: photo-14;
+    background-image: url("../Assets/img/work-14.png");
+    background-size: cover;
+    background-position: center;
+}
+
+.photo-15 { 
+    grid-area: photo-15;
+    background-image: url("../Assets/img/work-15.png");
+    background-size: cover;
+    background-position: center;
+}
+
+.photo-16 { 
+    grid-area: photo-16;
+    background-image: url("../Assets/img/work-16.png");
+    background-size: cover;
+    background-position: center;
+}
+
+
+/* CUARTA SECCIÓN */
+
+.posts{
+    padding: 10px;
+    background-color: #eee;
+    display: grid;
+    grid-template-columns: repeat(3, 270px);
+    grid-template-rows: repeat(2,220px);
+    gap: 10px;
+    justify-content: center;
+    align-content: center;
+}
+
+.posts .post{
+    display: grid;
+    align-content: end;
+    border-radius: 10px;
+    background-color: white;
+
+    background-size: cover;
+    background-position: center;
+
+    overflow: hidden;
+
+}
+
+.posts .post a{
+    text-decoration: none;
+}
+
+.posts .post .title{
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 10px;
+}
+
+.posts .post .title:hover{
+    background-color: white;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.posts .post-1{
+    background-image: url(../Assets/img/work-15.png);
+}
+
+.posts .post-2{
+    background-image: url(../Assets/img/work-02.png);
+}
+
+.posts .post-3{
+    background-image: url(../Assets/img/work-05.png);
+}
+
+.posts .post-4{
+    background-image: url(../Assets/img/work-08.png);
+}
+
+.posts .post-5{
+    background-image: url(../Assets/img/work-10.png);
+}
+
+.posts .post-6{
+    background-image: url(../Assets/img/work-13.png);
+}
+
+
+
+/* QUINTA SECCIÓN */
+
+.contact{
+    background-color: #457373;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    justify-content: center;
+}
+
+.contact form{
+    min-width: 55%;
+    margin: auto;
+    padding: 20px;
+    color: white;
+    display: grid;
+    gap: 10px;
+    grid-template: auto / auto;
+    align-items: center;
+}
+
+.contact form h2{
+    font-size: 20px;
+}
+
+.contact form label{
+    font-size: 15px;
+}
+
+.contact form input,
+.contact form textarea{
+    padding: 15px 10px;
+    font-size: 15px;
+    border: none;
+    border-radius: 5px;
+
+    
+}
+
+.contact .social-networks{
+    justify-self: center;
+    padding: 10px 0 ;
+}
+
+.contact .social-networks a{
+    text-decoration: none;
+    color: white;
+    margin-left: 15px;
+}
+
+.contact .social-networks a:hover{
+    color: #222;
+}
+
+.contact form input[type="submit"]{
+    width: 100%;
+    background-color: #222;
+    color: white;
+    font-weight: bold;
+}
+
+.contact form input[type="submit"]:hover{
+    background-color: white;
+    color: #222;
+}
+
+
+/* MEDIA QUERYES */
+
+@media (max-width: 1024px){
+    .posts{
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px){
+    .menu{
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-areas: 
+        "about projects"
+        "posts contact";
+    }
+
+    .menu .tile:hover .front{
+        margin-top: -50vh;
+    }
+
+    .about{
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        gap: 20px;
+        padding: 20px;
+        
+        grid-template-areas: 
+        "stack references"
+        "stack awards"
+        "stack services";
+    }
+
+    .projects {
+        grid-template-areas: 
+        "information information information information information information information information information information"
+        "information information information information information information information information information information"
+        "information information information information information information information information information information"
+        "photo-1 photo-1 photo-1 photo-7 photo-7 photo-6 photo-6 photo-6 photo-9 photo-9"
+        "photo-1 photo-1 photo-1 photo-7 photo-7 photo-6 photo-6 photo-6 photo-9 photo-9"
+        "photo-1 photo-1 photo-1 photo-7 photo-7 photo-8 photo-8 photo-8 photo-8 photo-8"
+        "photo-1 photo-1 photo-1 photo-10 photo-10 photo-8 photo-8 photo-8 photo-8 photo-8"
+        "photo-1 photo-1 photo-1 photo-10 photo-10 photo-11 photo-11 photo-11 photo-12 photo-12"
+        "photo-3 photo-3 photo-3 photo-3 photo-3 photo-11 photo-11 photo-11 photo-12 photo-12"
+        "photo-3 photo-3 photo-3 photo-3 photo-3 photo-11 photo-11 photo-11 photo-12 photo-12";
+    }
+    
+    .projects .information:hover .front{
+        margin-top: -25%;
+    }
+    
+}
+
+@media (max-width: 500px){
+    .menu{
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, 1fr);
+        grid-template-areas: 
+        "about"
+        "projects"
+        "posts"
+        " contact";
+    }
+
+    .menu .tile:hover .front{
+        margin-top: -25vh;
+    }
+
+    .about{
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, 1fr);
+        grid-template-areas: 
+        "stack" 
+        "references"
+        "awards"
+        "services";
+    }
+
+    .posts{
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+    }
+}
